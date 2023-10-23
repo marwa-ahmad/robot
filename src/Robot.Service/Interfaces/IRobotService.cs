@@ -10,7 +10,7 @@ namespace Robot.Service
         /// Return the result in JSON format
         /// </summary>
         /// <param name="commandRequest"></param>
-        /// <returns></returns>
-        public object ExecutePath(RobotCommandRequest commandRequest);
+        /// <returns>Execusion Model which has been saved into DB</returns>
+        public Execution ExecutePath(RobotCommandRequest commandRequest);
     }
 }
