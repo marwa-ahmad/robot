@@ -11,6 +11,6 @@ namespace Robot.Service
         /// </summary>
         /// <param name="commandRequest"></param>
         /// <returns>Execusion Model which has been saved into DB</returns>
-        public Execution ExecutePath(RobotCommandRequest commandRequest);
+        public Task<Execution> ExecutePath(RobotCommandRequest commandRequest);
     }
 }

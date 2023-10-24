@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace Robot.Model
+﻿namespace Robot.Model
 {
     public class CleanResponse
     {

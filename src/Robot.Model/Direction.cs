@@ -1,6 +1,6 @@
 ﻿namespace Robot.Model
 {
-    public enum Direction 
+    public enum Direction
     {
         East,
         West,

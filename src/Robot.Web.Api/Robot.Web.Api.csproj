@@ -16,5 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Robot.Model\Robot.Model.csproj" />
     <ProjectReference Include="..\Robot.Service\Robot.Service.csproj" />
+    <ProjectReference Include="..\Robot.Storage.PostgreSQL\Robot.Storage.PostgreSQL.csproj" />
   </ItemGroup>
 </Project>

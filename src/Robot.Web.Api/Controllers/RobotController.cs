@@ -15,9 +15,9 @@ namespace Robot.Web.Api.Controllers
         }
 
         [HttpPost("enter-path")]
-        public IActionResult EnterPath([FromBody] RobotCommandRequest commandRequest)
+        public async Task<IActionResult> EnterPath([FromBody] RobotCommandRequest commandRequest)
         {
-            var execusionModel = _robotService.ExecutePath(commandRequest);
+            var execusionModel = await _robotService.ExecutePath(commandRequest);
 
             //For post method since data is will be created, then response code will be Created(202) response and a resourceid
             return Created($"Request.Path/{execusionModel.Id}", execusionModel);

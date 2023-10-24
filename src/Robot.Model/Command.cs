@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Robot.Model
+﻿namespace Robot.Model
 {
     public class Command
     {

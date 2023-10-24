@@ -1,4 +1,5 @@
 ﻿using Robot.Model;
+using Robot.Storage;
 
 namespace Robot.Service
 {
@@ -13,11 +14,11 @@ namespace Robot.Service
             _dataStorageService = dataStorageService;
         }
 
-        public Execution ExecutePath(RobotCommandRequest commandRequest)
+        public async Task<Execution> ExecutePath(RobotCommandRequest commandRequest)
         {
             // Implement the robot cleaning logic
             var cleanResponse = _cleanService.Clean(commandRequest);
-            var execusionModel = new Execution() 
+            var execusionModel = new Execution()
             {
                 Commands = commandRequest.Commands.Count(),
                 Duration = cleanResponse.Duration,
@@ -27,7 +28,7 @@ namespace Robot.Service
             };
 
             // Update the database with the result; add a new record
-            var isSaved = _dataStorageService.Save(cleanResponse);
+            var isSaved = await _dataStorageService.Save(execusionModel);
             if (isSaved == 0) throw new Exception("Failed to save Execusion Model.");
             return execusionModel;
         }
